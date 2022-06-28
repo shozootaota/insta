@@ -1,0 +1,19 @@
+<div class="posts-index">
+  <div class="container">
+  <% @posts.each do |post| %>
+    <div class="posts-index-item">
+      <figure class="posts-index-image">
+        <img src="/assets/gray.jpg" alt="">
+      </figure>
+      <div class="posts-index-body">
+        <div class="posts-index-icon">
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-regular fa-comment"></i>
+        </div>
+        <p class="posts-index-account">ota_1996_625</p>
+        <p class="posts-index-text"><%= link_to(post.content, "/posts/#{post.id}") %></p>
+      </div>  
+    </div>
+  <% end %>
+  </div>
+</div>
