@@ -3,7 +3,7 @@
   <% @posts.each do |post| %>
     <div class="posts-index-item">
       <figure class="posts-index-image">
-        <img src="/assets/gray.jpg" alt="">
+        <img src="<%= "/post_images/#{post.image_name}" %>">
       </figure>
       <div class="posts-index-body">
         <div class="posts-index-icon">

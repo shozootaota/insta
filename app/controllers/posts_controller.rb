@@ -13,6 +13,13 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(content: params[:content])
+
+    if params[:image]
+      @post.image_name = "#{@post.id}.jpg"
+      image = params[:image]
+      File.binwrite("public/post_images/#{@post.image_name}", image.read)
+    end
+
     if @post.save
       flash[:notice] = "投稿を作成しました"
       redirect_to("/posts/index")
